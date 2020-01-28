@@ -3,6 +3,7 @@ title: My Rmd document
 auhtor: Matthew Rhodes
 date: 27 Jan 2020
 output: bookdown::html_document2
+bibliography: 
 ---
 
 Here is some inline code `r 1 + 1`
@@ -25,3 +26,11 @@ starwars %>%
 
 We can see in Table \@ref(tab:starwars-tbl)
 
+```{r, my-fig, fig.cap=" figure with no code"}
+knitr::include_graphics()
+
+```
+\ref(fig)
+
+
+about: [@]
