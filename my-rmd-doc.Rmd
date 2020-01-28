@@ -1,0 +1,27 @@
+---
+title: My Rmd document
+auhtor: Matthew Rhodes
+date: 27 Jan 2020
+output: bookdown::html_document2
+---
+
+Here is some inline code `r 1 + 1`
+
+```{r, starwars-plot, fig.cap= "A ggplot of starwars stuff"}
+library(tidyverse)
+starwars %>%
+filter(species == "Human") %>%
+ggplot() + aes(x = height, y =mass) + geom_point()
+```
+
+We can see figure \@ref(fig:starwars-plot)
+
+```{r starwars-tbl}
+starwars %>% 
+  filter(species == "Human") %>%
+  select(name, height, mass, homeworld) %>%
+  knitr::kable(caption = "A knitr table")
+```
+
+We can see in Table \@ref(tab:starwars-tbl)
+
